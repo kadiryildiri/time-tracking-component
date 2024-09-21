@@ -1,0 +1,192 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            blue: "hsl(246, 80%, 60%)",
+                            "light-red-work": "hsl(15, 100%, 70%)",
+                            "soft-blue": "hsl(195, 74%, 62%)",
+                            "light-red": "hsl(348, 100%, 68%)",
+                            "lime-green": "hsl(145, 58%, 55%)",
+                            violet: "hsl(264, 64%, 52%)",
+                            "soft-orange": "hsl(43, 84%, 65%)",
+                            "very-darkblue": "hsl(226, 43%, 10%)",
+                            "dark-blue": "hsl(235, 46%, 20%)",
+                            "desaturated-blue": "hsl(235, 45%, 61%)",
+                            "pale-blue": "hsl(236, 100%, 87%)",
+                        },
+                    },
+                },
+            }
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Document</title>
+
+        <style>
+            body {
+                font-family: "Rubik", sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-very-darkblue md:flex">
+        <main
+            class="flex flex-col h-screen gap-6 px-5 py-10 mb-24 md:grid md:grid-cols-4 md:w-full md:h-screen md:place-items-center md:mb-0 md:gap-0"
+        >
+            <div class="relative md:max-w-[250px] md:col-span-1 md:w-full md:-top-2">
+                <div
+                    class="bg-blue flex items-center justify-evenly rounded-xl px-4 py-6 relative top-3 md:flex md:flex-col md:items-start md:pl-6 md:gap-4 md:pb-20 md:top-0 md:z-10"
+                >
+                    <img class="h-14 rounded-full border-[3px] border-white" src="images/image-jeremy.png" alt="" />
+                    <div class="md:flex md:flex-col md:items-start md:mt-2">
+                        <p class="text-white/50 text-xs">Report for</p>
+                        <h1 class="text-white text-xl font-light md:text-3xl">Jeremy Robson</h1>
+                    </div>
+                </div>
+                <div
+                    class="bg-dark-blue rounded-xl flex items-center justify-around px-2 py-6 -top-4 mt-2 md:flex md:flex-col md:items-start md:gap-3 md:pl-6 md:relative md:-top-6 md:z-0 md:pt-8"
+                >
+                    <button class="text-white/50 font-light md:hover:text-white" id="dailyBtn">Daily</button>
+                    <button class="text-white font-light md:hover:text-white" id="weeklyBtn">Weekly</button>
+                    <button class="text-white/50 font-light md:hover:text-white" id="monthlyBtn">Monthly</button>
+                </div>
+            </div>
+            <div
+                class="md:col-span-3 md:grid md:grid-cols-3 md:grid-rows-2 md:gap-3 md:w-full md:place-items-center md:pr-16"
+            >
+                <div class="md:w-full">
+                    <div class="relative bg-light-red-work rounded-xl h-20 w-full overflow-hidden">
+                        <img class="absolute -top-3 right-3" src="images/icon-work.svg" alt="work icon" />
+                    </div>
+
+                    <div
+                        class="relative bg-dark-blue flex rounded-xl justify-between items-center p-6 absolute -translate-y-10 w-full md:hover:brightness-150 md:cursor-pointer"
+                        id="deneme"
+                    >
+                        <div>
+                            <h1 class="text-white text-lg font-medium">Work</h1>
+                            <h1 class="text-white text-3xl font-light"><span id="workHours">32</span>hrs</h1>
+                        </div>
+                        <div class="flex flex-col gap-3 mb-3">
+                            <p class="text-white/50 text-right text-3xl">...</p>
+                            <p class="text-white/50">Last week - <span id="lastWorkHours">36</span>hrs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-full">
+                    <div class="relative bg-soft-blue rounded-xl h-20 w-full overflow-hidden">
+                        <img class="absolute -top-3 right-3" src="images/icon-play.svg" alt="work icon" />
+                    </div>
+
+                    <div
+                        class="relative bg-dark-blue flex rounded-xl justify-between items-center p-6 absolute -translate-y-10 w-full md:hover:brightness-150 md:cursor-pointer"
+                        id="deneme"
+                    >
+                        <div>
+                            <h1 class="text-white text-lg font-medium">Play</h1>
+                            <h1 class="text-white text-3xl font-light"><span id="playHours">10</span>hrs</h1>
+                        </div>
+                        <div class="flex flex-col gap-3 mb-3">
+                            <p class="text-white/50 text-right text-3xl">...</p>
+                            <p class="text-white/50">Last week - <span id="lastPlayHours">8</span>hrs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-full">
+                    <div class="relative bg-light-red rounded-xl h-20 w-full overflow-hidden">
+                        <img class="absolute -top-3 right-3" src="images/icon-study.svg" alt="work icon" />
+                    </div>
+
+                    <div
+                        class="relative bg-dark-blue flex rounded-xl justify-between items-center p-6 absolute -translate-y-10 w-full md:hover:brightness-150 md:cursor-pointer"
+                        id="deneme"
+                    >
+                        <div>
+                            <h1 class="text-white text-lg font-medium">Study</h1>
+                            <h1 class="text-white text-3xl font-light"><span id="studyHours">4</span>hrs</h1>
+                        </div>
+                        <div class="flex flex-col gap-3 mb-3">
+                            <p class="text-white/50 text-right text-3xl">...</p>
+                            <p class="text-white/50">Last week - <span id="lastStudyHours">7</span>hrs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-full">
+                    <div class="relative bg-lime-green rounded-xl h-20 w-full overflow-hidden">
+                        <img class="absolute -top-3 right-3" src="images/icon-exercise.svg" alt="work icon" />
+                    </div>
+
+                    <div
+                        class="relative bg-dark-blue flex rounded-xl justify-between items-center p-6 absolute -translate-y-10 w-full md:hover:brightness-150 md:cursor-pointer"
+                        id="deneme"
+                    >
+                        <div>
+                            <h1 class="text-white text-lg font-medium">Exercise</h1>
+                            <h1 class="text-white text-3xl font-light"><span id="exerciseHours">4</span>hrs</h1>
+                        </div>
+                        <div class="flex flex-col gap-3 mb-3">
+                            <p class="text-white/50 text-right text-3xl">...</p>
+                            <p class="text-white/50">Last week - <span id="lastExerciseHours">5</span>hrs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-full">
+                    <div class="relative bg-violet rounded-xl h-20 w-full overflow-hidden">
+                        <img class="absolute -top-3 right-3" src="images/icon-social.svg" alt="work icon" />
+                    </div>
+
+                    <div
+                        class="relative bg-dark-blue flex rounded-xl justify-between items-center p-6 absolute -translate-y-10 w-full md:hover:brightness-150 md:cursor-pointer"
+                        id="deneme"
+                    >
+                        <div>
+                            <h1 class="text-white text-lg font-medium">Social</h1>
+                            <h1 class="text-white text-3xl font-light"><span id="socialHours">5</span>hrs</h1>
+                        </div>
+                        <div class="flex flex-col gap-3 mb-3">
+                            <p class="text-white/50 text-right text-3xl">...</p>
+                            <p class="text-white/50">Last week - <span id="lastSocialHours">10</span>hrs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-full">
+                    <div class="relative bg-soft-orange rounded-xl h-20 w-full overflow-hidden">
+                        <img class="absolute -top-3 right-3" src="images/icon-self-care.svg" alt="work icon" />
+                    </div>
+
+                    <div
+                        class="relative bg-dark-blue flex rounded-xl justify-between items-center p-6 absolute -translate-y-10 w-full md:hover:brightness-150 md:cursor-pointer"
+                        id="deneme"
+                    >
+                        <div>
+                            <h1 class="text-white text-lg font-medium">Self Care</h1>
+                            <h1 class="text-white text-3xl font-light"><span id="selfcareHours">2</span>hrs</h1>
+                        </div>
+                        <div class="flex flex-col gap-3 mb-3">
+                            <p class="text-white/50 text-right text-3xl">...</p>
+                            <p class="text-white/50">Last week - <span id="lastSelfcareHours">2</span>hrs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="main.js"></script>
+    </body>
+</html>
